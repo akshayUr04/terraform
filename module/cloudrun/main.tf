@@ -6,7 +6,7 @@ provider "google" {
 }
 
 resource "google_cloud_run_service" "default" {
-  name     = "cloudrun-srv"
+  name     = var.name
   location = "us-central1"
 
   template {

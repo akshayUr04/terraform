@@ -1,0 +1,24 @@
+steps:
+  - id: terraform init
+    name: hashicorp/terraform:${_TERRAFORM_VERSION}
+    args:
+      - init
+      - '-input=false'
+    dir: module/cloudrun
+  - id: terraform plan
+    name: hashicorp/terraform:${_TERRAFORM_VERSION}
+    args:
+      - plan
+      - '-input=false'
+      - '-out=tfplan'
+    dir: module/cloudrun
+  - id: terraform apply
+    name: hashicorp/terraform:${_TERRAFORM_VERSION}
+    args:
+      - apply
+      - '-auto-approve'
+      - '-input=false'
+      - tfplan
+    dir: module/cloudrun
+substitutions:
+  _TERRAFORM_VERSION: 1.5.0
