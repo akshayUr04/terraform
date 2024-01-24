@@ -3,3 +3,10 @@ variable "project_id"{
   default = "cicdproject-409518"
   type        = string
 }
+
+
+variable "name" {
+  description = "The ID of the project where the gke will be created"
+  default = "test"
+  type        = string
+}
