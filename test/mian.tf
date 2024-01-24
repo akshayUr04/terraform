@@ -1,5 +1,6 @@
 
 module "first" {
   source = "./module/cloudrun"
-  project_id = 	cicdproject-409518
+  project_id = var.project_id
+  name = var.name
 }
