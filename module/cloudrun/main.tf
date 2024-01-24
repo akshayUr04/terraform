@@ -1,7 +1,7 @@
 
 
 provider "google" {
-  project     =  cicdproject-409518
+  project     =  var.project_id
   region      = "us-central1"
 }
 
